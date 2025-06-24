@@ -1,0 +1,47 @@
+DATABASE formonly
+screen
+{
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                ฑฑฑฑฑฑ                                 ฑฑฑฑฑฑ                บ
+บฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ                                 ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑบ
+ฬอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออน
+บฺฤฤฤฤฤฤฤฤฤ  OPCIONES  ฤฤฤฤฤฤฤฤฤฤฟฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ  DATOS ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟบ
+บณ                               ณณ    Al            : [f1        ]          ณบ
+บณ                               ณณ    Sedes         : Del [x1] al [x2]      ณบ
+บณ                               ณณ                                          ณบ
+บณ                               ณณ    Ver Analistas : [s]                   ณบ
+บณ[a] [d1                       ]ณณ    Tipo          : [t] 1:Acumulado       ณบ
+บณ[b] [d2                       ]ณณ                        2:Mensual         ณบ
+บณ[c] [d3                       ]ณณ    Detalle       : [u]                   ณบ
+บณ[d] [d4                       ]ณณ    Incl. Jud/Cob : [v]                   ณบ
+บณ                               ณณ                                          ณบ
+บณ                               ณณ    Distribucion de Central [g]           ณบ
+บณ                               ณณ                                          ณบ
+บณ                               ณณ    Unificado     : [h]                   ณบ
+บณ                               ณณ                                          ณบ
+บภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤูบ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+}
+end
+attributes
+a  = FORMONLY.o1,AUTONEXT;
+d1 = FORMONLY.d1,NOENTRY;
+b  = FORMONLY.o2,AUTONEXT;
+d2 = FORMONLY.d2,NOENTRY;
+c  = FORMONLY.o3,AUTONEXT;
+d3 = FORMONLY.d3,NOENTRY;
+d  = FORMONLY.o4,AUTONEXT;
+d4 = FORMONLY.d4,NOENTRY;
+f1 = FORMONLY.fech TYPE DATE,FORMAT="dd/mm/yyyy",REVERSE;
+x1 = FORMONLY.agei,REVERSE;
+x2 = FORMONLY.agef,REVERSE;
+g  = FORMONLY.vouc TYPE CHAR,UPSHIFT,INCLUDE =('S','N');
+s = FORMONLY.deta TYPE CHAR,UPSHIFT,INCLUDE=('S','N'),REVERSE, COMMENTS = " Ingrese S(Si) o N(No)" ;
+t = FORMONLY.tipo TYPE SMALLINT,UPSHIFT,INCLUDE=(1,2),REVERSE;
+u = FORMONLY.det1 TYPE CHAR,UPSHIFT,INCLUDE=('S','N'),REVERSE, COMMENTS = " Ingrese S(Si) o N(No)" ;
+v = FORMONLY.det2 TYPE CHAR,UPSHIFT,INCLUDE=('S','N'),REVERSE, COMMENTS = " Ingrese S(Si) o N(No)" ;
+h = FORMONLY.unif TYPE CHAR,UPSHIFT,INCLUDE=('S','N'), COMMENTS = " Ingrese S(Si) o N(No)" ;
+end
+
+instructions
+delimiters " "
